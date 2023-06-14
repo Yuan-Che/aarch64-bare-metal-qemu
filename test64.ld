@@ -1,7 +1,7 @@
 ENTRY(_startup)
 SECTIONS
 {
-	. = 0x40000000;
+	. = 0x00080000000;
 	.startup . : { startup64.o(.text) }
 	.text.boot : { *(.text.boot) }
 	.text : { *(.text) }
