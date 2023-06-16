@@ -1,5 +1,5 @@
 volatile unsigned int * const UART0DR = (unsigned int *) 0x00070000000;
-volatile unsigned int * const MDUBASE = (unsigned int *) 0x00070221000;
+volatile unsigned int * const RTCBASE = (unsigned int *) 0x00070602000;
 
 unsigned long __stack_chk_guard;
 void __stack_chk_guard_setup(void)
@@ -93,7 +93,7 @@ void c_entry() {
      char ch;
      
      while ((ch = input_uart0()) != ';') {
-          unsigned int nowtime = *MDUBASE; // Unix Timestamp
+          unsigned int nowtime = *RTCBASE; // Unix Timestamp
           if (prevtime != nowtime) {
                prevtime = nowtime;
                // printunixtime(nowtime);
