@@ -9,4 +9,9 @@ void print_uart0(const char *s) {
  
 void c_entry() {
      print_uart0("Hello world!\n");
+     print_uart0("Press e to exit.\n");
+     char s;
+     while (s != 'e') {
+          s = (char) *UART0DR;
+     }
 }
