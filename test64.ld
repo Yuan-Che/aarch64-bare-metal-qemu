@@ -9,6 +9,6 @@ SECTIONS
 	.rodata : { *(.rodata) }
 	.bss : { *(.bss COMMON) }
 	. = ALIGN(8);
-	. = . + 0x10000; /* 64 kB of stack memory */
+	. = . + 0x4000; /* 16 kB of stack memory */
 	LD_STACK_PTR = .;
 }
